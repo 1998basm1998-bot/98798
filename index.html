@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مهيئ صور متجر Google Play الاحترافي</title>
+    <title>مهيئ صور متجر Google Play - فن التقنية الحديثة</title>
     <style>
         * {
             box-sizing: border-box;
@@ -93,6 +93,7 @@
             justify-content: center;
             gap: 20px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .controls-panel label {
@@ -102,6 +103,13 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .controls-panel label:hover {
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .workspace {
@@ -297,7 +305,7 @@
                 }
                 ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, targetWidth, targetHeight);
             } else if (mode === 'fit') {
-                // تكتيك برمجى ذكي: استخراج لون حافة الصورة الأصلية لمنع التباين
+                // استخراج لون حافة الصورة الأصلية لمنع التباين
                 const tempCanvas = document.createElement('canvas');
                 tempCanvas.width = img.width;
                 tempCanvas.height = img.height;
