@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهيئ صور متجر Google Play - فن التقنية الحديثة</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 35px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .upload-section {
+            border: 2px dashed #38bdf8;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .upload-section:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: #0ea5e9;
+        }
+
+        .upload-section svg {
+            width: 50px;
+            height: 50px;
+            fill: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .upload-section p {
+            font-size: 16px;
+            color: #cbd5e1;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .workspace {
+            display: none;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .workspace {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            color: #f1f5f9;
+            margin-bottom: 15px;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .preview-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .preview-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>مُهيئ صور متجر Google Play 🛠️</h1>
+            <p>اختر أي صورة لتوليد الأيقونة والرسم المميز بالأبعاد الرسمية المطلوبة فوراً وبدون تشويه</p>
+        </div>
+
+        <div class="upload-section" onclick="document.getElementById('fileInput').click()">
+            <svg viewBox="0 0 24 24">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+            </svg>
+            <p>اضغط هنا لرفع الصورة الأصلية للتطبيق</p>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <div class="workspace" id="workspace">
+            <!-- كرت الأيقونة -->
+            <div class="card">
+                <h3>أيقونة المتجر (App Icon)</h3>
+                <span class="badge">512 × 512 بكسل</span>
+                <div class="preview-container">
+                    <img id="iconPreview" alt="معاينة الأيقونة">
+                </div>
+                <button class="btn" id="downloadIcon">تحميل الأيقونة الجاهزة ✅</button>
+            </div>
+
+            <!-- كرت الرسم المميز -->
+            <div class="card">
+                <h3>الرسم المميز (Feature Graphic)</h3>
+                <span class="badge">1024 × 500 بكسل</span>
+                <div class="preview-container">
+                    <img id="featurePreview" alt="معاينة الرسم المميز">
+                </div>
+                <button class="btn" id="downloadFeature">تحميل الرسم المميز الجاهز ✅</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const workspace = document.getElementById('workspace');
+        const iconPreview = document.getElementById('iconPreview');
+        const featurePreview = document.getElementById('featurePreview');
+
+        let originalImage = null;
+
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                originalImage = new Image();
+                originalImage.onload = function() {
+                    processImages();
+                };
+                originalImage.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        function processImages() {
+            // 1. معالجة الأيقونة 512x512
+            iconPreview.src = resizeAndCrop(originalImage, 512, 512);
+
+            // 2. معالجة الرسم المميز 1024x500 ذكي بدون تمطيط
+            featurePreview.src = resizeAndCrop(originalImage, 1024, 500);
+
+            // إظهار واجهة العمل
+            workspace.style.display = 'grid';
+            workspace.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resizeAndCrop(img, targetWidth, targetHeight) {
+            const canvas = document.createElement('canvas');
+            canvas.width = targetWidth;
+            canvas.height = targetHeight;
+            const ctx = canvas.getContext('2d');
+
+            // حسابات احترافية للقص المركزي (Center Crop) لتجنب تمطيط الأبعاد
+            const imgRatio = img.width / img.height;
+            const targetRatio = targetWidth / targetHeight;
+            
+            let sx, sy, sWidth, sHeight;
+
+            if (imgRatio > targetRatio) {
+                // الصورة الأصلية أعرض من النسبة المطلوبة
+                sHeight = img.height;
+                sWidth = img.height * targetRatio;
+                sx = (img.width - sWidth) / 2;
+                sy = 0;
+            } else {
+                // الصورة الأصلية أطول من النسبة المطلوبة
+                sWidth = img.width;
+                sHeight = img.width / targetRatio;
+                sx = 0;
+                sy = (img.height - sHeight) / 2;
+            }
+
+            // رسم الجزء المقصوص بدقة فائقة على الأبعاد الجديدة
+            ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, targetWidth, targetHeight);
+            return canvas.toDataURL('image/png');
+        }
+
+        // إعداد أزرار التحميل المباشر
+        document.getElementById('downloadIcon').addEventListener('click', () => {
+            triggerDownload(iconPreview.src, 'app-icon-512x512.png');
+        });
+
+        document.getElementById('downloadFeature').addEventListener('click', () => {
+            triggerDownload(featurePreview.src, 'feature-graphic-1024x500.png');
+        });
+
+        function triggerDownload(dataUrl, filename) {
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
